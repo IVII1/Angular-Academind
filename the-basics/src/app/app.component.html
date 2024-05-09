@@ -1,0 +1,20 @@
+<app-warning></app-warning>
+<app-success></app-success>
+<!-- label for="">Server Name</label>
+<input type="text"
+class="form-control"
+(input)="onUpdateServerName($event)">
+<p>{{serverName }}</p> -->
+<input type="text" class="form-control"
+[(ngModel)]="serverName">
+<p>{{serverCreationStatus}}</p>
+<button class="btn btn-primary" (click)="onCreateServer()">Add server</button>
+<input type="text" name="" id=""
+[(ngModel)]="userName">
+<p>{{userName}}</p>
+<button [disabled]="userName === ''" (click)="resetUserName()">Reset</button>
+<button (click)="toggleParagraph()">Display Details</button>
+<p *ngIf="showParagraph">magic paragraph</p>
+<div *ngFor="let logItem of log; let i = index"
+[ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+[ngClass]="{white: i >= 4}">{{logItem}}</div>
